@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+header {
+    padding: 10px;
+    text-align: center;
+    font-size: 30px;
+    background-image: linear-gradient(to right, rgb(91, 230, 228), rgb(14, 75, 73));
+    color: white;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: left;
+  font-weight: bold;
+  font-size:x-large;
+}
+
+form {
+    margin-top: 10px;
+}
+
+label {
+    font-size: 25px;
+}
+
+input {
+    padding: 2px;
+    width: 100%;
+}
+
+.btn {
+    width: 100%;
+    background-color: rgb(91, 230, 228);
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 3px;
+}
