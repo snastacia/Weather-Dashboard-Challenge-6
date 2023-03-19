@@ -7,8 +7,6 @@ var userInput = document.querySelector(".user-input");
 var searchHistory = document.querySelector("#history");
 var weatherIcon = $("#icon");
 
-
-
 //Function that handles the form submit
 
 function handleFormSubmit(event) {
@@ -19,11 +17,27 @@ function handleFormSubmit(event) {
     }
 }
 
+//Write Function that saves search history
+
+function saveSearch() {
+    var newCity = submitBtn.getAttribute("data-name")
+    var savedSearch = JSON.parse(localStorage.getItem("savedcities")) || []
+    savedSearch.push(newCity)
+    localStorage.setItem("savedcities", JSON.stringify(savedSearch))
+
+    console.log(newCity);
+}
+
 // Write Function that loads search history
 
-
-
-//Write Function that saves search history
+function loadStorage() {
+    var pastSearch = localStorage.getItem("savedcities");
+    
+    if (!pastSearch) {
+        return;
+     }
+     searchHistory.textContent = pastSearch;
+}
 
 //Function that fetches weather data from API and displays current + future data
 
@@ -34,7 +48,7 @@ function getWeather(city) {
             return response.json();
         })
         .then(function (data) {
-            //console.log(data);
+            console.log(data);
             //saveToStorage(data.name)
             var currentDate = dayjs();
             var cityEl = document.querySelector("#city")
@@ -55,7 +69,10 @@ function getWeather(city) {
             humidityEl.textContent = "Humidity: " + data.main.humidity + " %"
 
            weatherForecast(data); 
-})
+
+           //localStorage.setItem("savedcities", savedcities);
+           loadStorage();
+  })
 }
 
 function weatherForecast(forecastData) {
@@ -101,16 +118,16 @@ function weatherForecast(forecastData) {
                 })
             }
 
-            
-//})
-//}
 
 // Event listeners for button clicks
 
 submitBtn.addEventListener("click", handleFormSubmit);
 
-//searchHistory.on('click', handleSearchHistoryClick);
+submitBtn.addEventListener("click", saveSearch);
 
-//loadStorage();
+submitBtn.addEventListener("click", loadStorage);
+
+
+
 
 
