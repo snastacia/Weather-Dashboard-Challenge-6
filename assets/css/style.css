@@ -8,7 +8,7 @@ header {
     padding: 10px;
     text-align: center;
     font-size: 30px;
-    background-image: linear-gradient(to right, rgb(91, 230, 228), rgb(14, 75, 73));
+    background-image: linear-gradient(to right, rgb(109, 178, 177), rgb(0, 26, 25));
     color: white;
 }
 
@@ -38,9 +38,28 @@ input {
 
 .btn {
     width: 100%;
-    background-color: rgb(91, 230, 228);
+    background-color: rgb(0, 26, 25);
     color: white;
     margin-bottom: 5px;
     margin-top: 5px;
     padding: 3px;
 }
+
+#current {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid rgb(0, 26, 25);
+    padding: 25px;
+    background-color: rgb(109, 178, 177);
+    color: rgb(0, 26, 25);
+}
+
+.card {
+    background-color: rgb(5, 91, 88);
+    color:white;
+    margin-right:15px;
+    padding:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid rgb(0, 26, 25);
+  }

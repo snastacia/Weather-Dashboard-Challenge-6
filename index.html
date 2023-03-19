@@ -27,21 +27,24 @@
                     <button id="submit" class="btn">Search</button>
                 </form>
                 <hr/>
-               <ul id="cities"></ul>
+               <!-- <ul id="cities"></ul> -->
+               <div id="history"></div>
             </aside>
             
       <div class="col-sm-9 row">
         <div id="current">
           <h3 id="city"></h3>
-          <h4 id="temp"></h4>
-          <h4 id="wind"></h4>
-          <h4 id="humidity"></h4>
+          <img id="icon">
+          <h4 id="temp">Temp:</h4>
+          <h4 id="wind">Wind:</h4>
+          <h4 id="humidity">Humidity:</h4>
         </div>
 
         <br/>
         <div>
-          <h2>5-Day Forecast</h2>
-        </div><br/>
+        <h2>5-Day Forecast:</h2>
+        </div>
+        <br/>
         <div class="row" id="5DayForecast"></div>
         <br/>
       </div>
@@ -54,4 +57,9 @@
 
     <script type="text/javascript" src="./assets/js/script.js">
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+    crossorigin="anonymous"></script>
+
 </body>
