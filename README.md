@@ -56,6 +56,8 @@ https://day.js.org/docs/en/durations/add
 
 JavaScript fetch request were written with the assitance of tutor, Katherine Redford.
 
+Local Storage functions were created with the assitance of AskBCS Learning Assistant user ask-235781.
+
 ## License
 
 N/A

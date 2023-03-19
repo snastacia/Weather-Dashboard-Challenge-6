@@ -20,23 +20,33 @@ function handleFormSubmit(event) {
 //Write Function that saves search history
 
 function saveSearch() {
-    var newCity = submitBtn.getAttribute("data-name")
+    var newCity = userInput.value;
     var savedSearch = JSON.parse(localStorage.getItem("savedcities")) || []
+    //console.log(savedSearch);
     savedSearch.push(newCity)
+   //console.log(savedSearch);
     localStorage.setItem("savedcities", JSON.stringify(savedSearch))
-
-    console.log(newCity);
 }
 
 // Write Function that loads search history
 
 function loadStorage() {
-    var pastSearch = localStorage.getItem("savedcities");
-    
-    if (!pastSearch) {
-        return;
-     }
-     searchHistory.textContent = pastSearch;
+    var pastSearches = JSON.parse(localStorage.getItem("savedcities"));
+    if (!pastSearches) {
+        localStorage.setItem("savedcities", JSON.stringify([]))
+        return
+    }
+
+    var citiesHistory = $("#history");
+
+    citiesHistory.empty()
+
+    for (let i = 0; i < pastSearches.length; i++) {
+        var pastcityName = $("<button>");
+        pastcityName.attr("class", "btn history-btn");
+        pastcityName.text(pastSearches[i]);
+        citiesHistory.append(pastcityName)
+    }
 }
 
 //Function that fetches weather data from API and displays current + future data
@@ -69,9 +79,6 @@ function getWeather(city) {
             humidityEl.textContent = "Humidity: " + data.main.humidity + " %"
 
            weatherForecast(data); 
-
-           //localStorage.setItem("savedcities", savedcities);
-           loadStorage();
   })
 }
 
@@ -87,7 +94,6 @@ function weatherForecast(forecastData) {
         .then(function (data) {
             console.log(data, "forecastData");
 
-
             var startingIndex;
 
             for (let i = 0; i < data.list.length; i++) {
@@ -97,8 +103,6 @@ function weatherForecast(forecastData) {
                     break
                 }
             }
-
-                    // for loop to dynamically format the future forecast divs
                     const currentDay = dayjs();
                     const futureForecastElement = document.getElementById("5DayForecast")
                     futureForecastElement.innerHTML = ""
@@ -114,19 +118,25 @@ function weatherForecast(forecastData) {
                     </div>`
                         day++
                     }
-
                 })
             }
 
+            function searchhistoryCity(event) {
+                if (!event.target.matches('.history-btn')) {
+                    return;
+                }
+                var btn = event.target;
+                var city = btn.innerHTML
+            
+                getWeather(city)
+            }
 
 // Event listeners for button clicks
 
 submitBtn.addEventListener("click", handleFormSubmit);
-
 submitBtn.addEventListener("click", saveSearch);
-
 submitBtn.addEventListener("click", loadStorage);
-
+searchHistory.addEventListener('click', searchhistoryCity);
 
 
 

@@ -45,12 +45,22 @@ input {
     padding: 3px;
 }
 
+.history-btn {
+    width: 100%;
+    background-color: rgb(141, 160, 159);
+    color: white;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 3px;
+    
+}
+
 #current {
     margin-top: 10px;
     margin-bottom: 10px;
     border: solid rgb(0, 26, 25);
     padding: 25px;
-    background-color: rgb(109, 178, 177);
+    background-color: rgb(196, 228, 228);
     color: rgb(0, 26, 25);
 }
 
