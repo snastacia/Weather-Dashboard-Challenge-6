@@ -1,9 +1,10 @@
 # Weather-Dashboard-Challenge-6
 
-~link to deployed app here~
+https://snastacia.github.io/Weather-Dashboard-Challenge-6/ 
 
-![Weather Dashboard Screenshot 1]()
-![Weather Dashboard Screenshot 2]()
+![Weather Dashboard Homepage](assets/images/homepage1.png)
+![Weather Dashboard Search](assets/images/homepage2.png)
+![Weather Dashboard result from past search](assets/images/homepage3.png)
 
 # User Story
 
