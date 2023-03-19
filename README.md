@@ -44,14 +44,17 @@ Right below that, you'll see a 5-Day Forecrast section that will present you wit
 
 ## Credits
 
--Used following link to assist with API key:
+Used following link to assist with API key:
 https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys 
--Request URLs were fetched from the following APIs:
+
+Request URLs were fetched from the following APIs:
 https://openweathermap.org/current 
 https://openweathermap.org/forecast5
--Used following link to assist with styling for gradient background:
+
+Used following link to assist with styling for gradient background:
 https://www.w3schools.com/css/css3_gradients.asp 
--Used following links in dayjs for current date + formatting:
+
+Used following links in dayjs for current date + formatting:
 https://day.js.org/docs/en/display/format
 https://day.js.org/docs/en/durations/add
 
@@ -65,5 +68,8 @@ N/A
 
 ## Features
 
--Search engine that fetches the results of weather conditions in different cities. 
--Functionality to display weather forecast for the next 5 days. 
+Search engine that fetches the results of weather conditions in different cities. 
+
+Functionality to display weather forecast for the next 5 days. 
+
+Ability to click on previously searched city to display weather conditions for that city again. 
